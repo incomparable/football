@@ -1,0 +1,60 @@
+{% extends "admin/admin_base.html" %}
+{% block title %}Games Page{% endblock %}
+{% block head %}
+  {{ super() }}
+<style>
+    td{
+    text-align: canter;
+    }
+    th{
+    text-align: center;
+</style>
+{% endblock %}
+{% block content %}
+    {% if session['name'] %}&nbsp;
+
+    {% else %} <p style="color: red;">Please login first...</p>
+
+    {% endif %}
+  <!--div class="container">
+      <!--div class="row">
+          <div class="col-sm-12"-->
+             <div class="jumbotron text-center">
+                 <div id="signup" class="span3 well well-large offset4">
+
+<p class="important">
+ <center>
+     <p style="color:blue; ">GAME RESULTS</p><br>
+     <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th> Timestamp</th>
+        <th> Eyes</th>
+        <th> Pic</th>
+        <th> Ball</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+     {% for game in games %}
+
+        <td>{{ game._id }}</td>
+        <td>{{ game.timestamp }}</td>
+        <td>{{ game.eyes }}</td>
+        <td>{{ game.pic }}</td>
+        <td>{{ game.ball }}</td>
+     </tr>
+     </tbody>
+
+     {% endfor %}<br>
+
+
+
+     </table>
+ </center>
+
+
+
+</p></div></div>
+{% endblock %}

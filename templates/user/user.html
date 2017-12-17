@@ -1,0 +1,33 @@
+{% extends "user/user_base.html" %}
+{% block title %}User Home Page{% endblock %}
+{% block head %}
+  {{ super() }}
+<style>
+    br{line-height:20em;}
+</style>
+{% endblock %}
+{% block content %}
+
+    {% if session['name'] %}Welcome :&emsp;{{session['name']}}
+
+    {% else %}<p style="color: red;">Please login first...</p>
+
+    {% endif %}
+
+
+<!--{% if current_user.is_authenticated %}-->
+  <!--Hi {{ current_user.name }}!-->
+<!--{% endif %}-->
+
+<!--div class="container"><div class="row"-->
+<!--<div class="col-sm-12">-->
+<div class="jumbotron text-center">
+<div id="signup" class="span3 well well-large offset4">
+
+<p class="important">
+    <br>
+</p>
+</div></div>
+
+{% endblock %}
+
