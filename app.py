@@ -406,6 +406,7 @@ def clearsession1():
 #############################################
 #                 ROUTING                   #
 #############################################
+@app.route('/')
 @app.route('/user/')
 def user1():
     return render_template("user/user.html", session=session)
