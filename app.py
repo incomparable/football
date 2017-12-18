@@ -444,17 +444,9 @@ def get_ball_posisave_user_ball_positiontion():
             print"ball_x value", ball_x
             print"ball_y value", ball_y
 
-            if ball_x == i['x']:
+            if ball_x == i['x'] and ball_y == i['y']:
                 # print"====================if_1"
-
-                if ball_y == i['y']:
-                    # print"====================else_1"
-
-                    mdb.save_winner(game_id, user, ball_x, ball_y)
-
-                else:
-                    # print"====================else_2"
-                    pass
+                mdb.save_winner(game_id, user, ball_x, ball_y)
             else:
                 # print"====================else_1"
                 pass
