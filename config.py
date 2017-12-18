@@ -7,3 +7,5 @@ AUTH_DB_NAME = 'admin'
 
 DB_USER = 'admin'
 DB_PASS = '123'
+
+
