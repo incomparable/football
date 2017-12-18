@@ -8,16 +8,12 @@
 
 {% endblock %}
 {% block content %}
-    {% if session['name'] %}&nbsp;
 
-  <!--div class="container">
-        <!--div class="row">
-          <div class="col-sm-12"-->
              <div class="jumbotron text-center">
                  <div id="signup" class="span3 well well-large offset4">
 
 <p class="important"><br>
-
+    {% if session['name'] %}
       --- GAME RESULT SAVE SUCCESSFULLY ---
 <br>
 

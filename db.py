@@ -230,13 +230,19 @@ class Mdb:
                 email = data['email']
         return name
 
+    def get_admin_name(self, email):
+        result = self.db.admin.find({'email': email})
+        email = ''
+        if result:
+            for data in result:
+                email = data['email']
+        return email
+
     def get_password(self, email):
         result = self.db.user.find({'email': email})
-        name = ''
         password = ''
         if result:
             for data in result:
-                name = data['username']
                 password = data['password']
         return password
 
@@ -251,7 +257,7 @@ if __name__ == "__main__":
     # quick test connecting to localdb
     mdb = Mdb()
     mdb.get_user_game()
-    mdb.add_admin('tom@gmail.com', '123')
+    mdb.add_admin('john@gmail.com', '123')
     # mdb.add_game('56', '65', '789', '56', '98',
     # '123', '68', '57', '10', '11')
     # mdb.save_ball_position('1', '22', '33')

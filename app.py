@@ -140,11 +140,13 @@ def admin_login():
 
         sumSessionCounter()
         email = request.form['email']
+        print '-------',email
         password = request.form['password']
+        print '-------',password
 
         if mdb.admin_exists(email, password):
-            name = mdb.get_name(email)
-            session['name'] = name
+            email = mdb.get_admin_name(email)
+            session['name'] = email
             expiry = datetime.datetime.utcnow() + datetime.\
                 timedelta(minutes=30)
             token = jwt.encode({'user': email, 'exp': expiry},
@@ -317,7 +319,7 @@ def add_user():
     except Exception as exp:
         print('add_user() :: Got exception: %s' % exp)
         print(traceback.format_exc())
-    return render_template('/user/login.html', session=session)
+    return render_template('/user/user.html', session=session)
 
 
 #############################################
@@ -355,7 +357,7 @@ def login():
             templateData = {'title': 'singin page'}
         else:
             # Login Failed!
-            return render_template('/user/login.html', **templateData)
+            return render_template('/user/user.html', **templateData)
 
             ret['msg'] = 'Login Failed'
             ret['err'] = 1
@@ -489,11 +491,6 @@ def work1():
 @app.route('/user/signup')
 def user_signup():
     return render_template("user/signup.html", session=session)
-
-
-@app.route('/user/login')
-def user_login():
-    return render_template("user/login.html", session=session)
 
 
 if __name__ == '__main__':

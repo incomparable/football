@@ -6,11 +6,14 @@
 {% endblock %}
 {% block content %}
 <p class="important">
-        {% if session['name'] %}&nbsp;
+
 <div class="jumbotron text-center">
 <div id="signup" class="span3 well well-large offset4">
+<p class="important">
+{% if session['name'] %}&nbsp;
 
 
+     <p style="color:green">welcome {{session['name']}}</p><br>
     {% else %}
 
   {% include 'user/session.html' %}

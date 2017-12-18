@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/user/home">SPOT THE BALL</a>
+            <a class="navbar-brand" href="/user">SPOT THE BALL</a>
         </div>
 
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -35,7 +35,7 @@
                 {% if session['name'] %}
                 <li><a href="{{ url_for('clearsession') }}"><span class="glyphicon glyphicon-log-out">&nbsp;</span>Logout</a></li>
                 {% else %}        <li><a href="/user/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/user/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>{% endif %}
+                <li><a href="/user"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>{% endif %}
             </ul>
         </div>
     </div>
